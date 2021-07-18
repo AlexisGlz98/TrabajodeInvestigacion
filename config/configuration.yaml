@@ -1,0 +1,26 @@
+homeassistant:
+    name: Casa
+    latitude: 26.024765
+    longitude: -98.408607
+    unit_system: metric
+    temperature_unit: C
+    time_zone: America/Mexico_City
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  username: mqtt
+  password: broker
+  discovery: true
+
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml

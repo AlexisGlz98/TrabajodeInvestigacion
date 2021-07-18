@@ -1,0 +1,41 @@
+esphome:
+  name: cocina_foco
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: "INFINITUM25_10"
+  password: "100%guitarrista"
+  manual_ip:
+    static_ip: 192.168.8.6
+    gateway: 192.168.8.1
+    subnet: 255.255.255.0
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Cocina Foco Fallback Hotspot"
+    password: "XAH514bwcb2Q"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+# Example configuration entry
+# Example configuration entry
+output:
+  - platform: gpio
+    pin: D2
+    id: gpio_d2
+switch:
+  - platform: gpio
+    name: "Encender_Foco_cocina"
+    pin: 
+      number: D4
+      inverted: yes
+      mode: OUTPUT
